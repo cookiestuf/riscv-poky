@@ -366,7 +366,7 @@ def splitdebuginfo(file, debugfile, debugsrcdir, sourcefile, d):
 
     bb.utils.mkdirhier(os.path.dirname(debugfile))
 
-    cmd = "'%s' --only-keep-debug '%s' '%s'" % (objcopy, file, debugfile)
+    cmd = "'%s' -I elf64-little --only-keep-debug '%s' '%s'" % (objcopy, file, debugfile)
     (retval, output) = oe.utils.getstatusoutput(cmd)
     if retval:
         bb.fatal("objcopy failed with exit code %s (cmd was %s)%s" % (retval, cmd, ":\n%s" % output if output else ""))

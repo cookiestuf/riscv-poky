@@ -1,8 +1,7 @@
 require recipes-devtools/qemu/qemu.inc
 
 SRC_URI = "git://github.com/riscv/riscv-qemu.git;branch=riscv-all;destsuffix=${S}"
-SRCREV_pn-qemu-native = "4c510a3f5ea14af6fc136cdce71f84aa433d2a73"
-SRCREV_pn-nativesdk-qemu = "4c510a3f5ea14af6fc136cdce71f84aa433d2a73"
+SRCREV = "${AUTOREV}"
 
 SRC_URI_remove_class-native = "\
     file://fix-libcap-header-issue-on-some-distro.patch \
